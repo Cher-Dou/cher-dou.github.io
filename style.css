@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Cher-Dou — academic personal site
+   Minimalist style inspired by yunlong-song.com
+   ========================================================================== */
+
+:root {
+  --text: #1a1a1a;
+  --text-soft: #555;
+  --link: #1155cc;
+  --link-hover: #0a3d91;
+  --border: #e2e2e2;
+  --bg: #ffffff;
+  --accent: #f5f5f5;
+  --maxw: 780px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 22px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.nav a:last-child { margin-right: 0; }
+.nav a:hover { color: var(--link); }
+.nav a.active { color: var(--link); }
+.nav-left { display: flex; align-items: center; }
+.nav-right { display: flex; align-items: center; }
+
+/* ---------- Hero / bio ---------- */
+.hero {
+  display: flex;
+  gap: 34px;
+  align-items: flex-start;
+  padding: 48px 0 12px;
+}
+.hero-photo {
+  flex: 0 0 auto;
+  width: 190px;
+}
+.hero-photo img {
+  width: 190px;
+  height: 190px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--border);
+}
+.hero-body { flex: 1 1 auto; min-width: 0; }
+.hero-body h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.hero-body .zh { color: var(--text-soft); font-weight: 400; font-size: 20px; }
+.hero-body .role {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+.hero-body .role a { color: var(--link); text-decoration: none; }
+.hero-body .role a:hover { text-decoration: underline; }
+
+/* ---------- Social icons ---------- */
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.socials a {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.socials a:hover { color: var(--link); }
+.socials svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* ---------- Content ---------- */
+main { padding-bottom: 64px; }
+
+p { margin: 0 0 16px; }
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 34px 0;
+}
+
+section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.bio p { color: var(--text); }
+
+/* ---------- News list ---------- */
+.news { list-style: none; padding: 0; margin: 0; }
+.news li {
+  display: flex;
+  gap: 14px;
+  padding: 7px 0;
+  font-size: 15.5px;
+}
+.news .date {
+  flex: 0 0 92px;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Publications ---------- */
+.pub {
+  display: flex;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pub:last-child { border-bottom: none; }
+.pub-thumb {
+  flex: 0 0 150px;
+  width: 150px;
+}
+.pub-thumb img,
+.pub-thumb .thumb-ph {
+  width: 150px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  display: block;
+  background: var(--accent);
+}
+.pub-thumb .thumb-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 12px;
+}
+.pub-body { flex: 1 1 auto; min-width: 0; }
+.pub-title { font-weight: 600; margin: 0 0 4px; }
+.pub-authors { color: var(--text-soft); font-size: 15px; margin: 0 0 3px; }
+.pub-authors .me { color: var(--text); font-weight: 600; }
+.pub-venue { font-size: 15px; font-style: italic; color: var(--text-soft); margin: 0 0 6px; }
+.pub-links a {
+  font-size: 14px;
+  text-decoration: none;
+  margin-right: 12px;
+  color: var(--link);
+}
+.pub-links a:hover { text-decoration: underline; }
+
+/* ---------- Project cards ---------- */
+.project {
+  display: flex;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.project:last-child { border-bottom: none; }
+.project-thumb { flex: 0 0 180px; width: 180px; }
+.project-thumb img,
+.project-thumb .thumb-ph {
+  width: 180px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 12px;
+}
+.project-body h3 { margin: 0 0 6px; font-size: 17px; }
+.project-body p { font-size: 15.5px; color: var(--text-soft); }
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 22px 0;
+  color: var(--text-soft);
+  font-size: 13.5px;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hero { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  .socials { justify-content: center; }
+  .nav .container { height: auto; padding: 12px 24px; flex-wrap: wrap; gap: 8px; }
+  .nav a { margin-right: 16px; }
+  .pub, .project { flex-direction: column; }
+  .pub-thumb, .project-thumb { width: 100%; flex-basis: auto; }
+  .pub-thumb img, .pub-thumb .thumb-ph,
+  .project-thumb img, .project-thumb .thumb-ph { width: 100%; height: 150px; }
+  .news li { flex-direction: column; gap: 2px; }
+  .news .date { flex-basis: auto; }
+}
